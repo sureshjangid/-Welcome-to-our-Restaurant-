@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bg2.jpg) no-repeat center center/cover;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 10%;
+            background-color: black;
+            opacity: 0.7;
+        }
+
+        .navbar ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            font-size: 2rem;
+            list-style: none;
+            padding: 22px;
+        }
+
+        .navbar ul li a {
+            font-size: 2.2rem;
+            text-decoration: none;
+            font-weight: bolder;
+            color: yellow;
+        }
+
+        .logo img {
+            width: 8rem;
+            height: 7rem;
+            position: absolute;
+            top: -1rem;
+            left: 3rem;
+        }
+
+        .main {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .main .writer {
+            color: white;
+            font-size: 7rem;
+            font-weight: bolder;
+            width: 51rem;
+            text-align: center;
+            text-transform: capitalize;
+            position: relative;
+            top: 8rem;
+        }
+
+        .rating {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+
+        .rating img {
+            width: 9rem;
+            height: 2.8rem;
+            position: absolute;
+            top: 2rem;
+            right: 16rem;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+
+        .order {
+            height: 2.5rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            position: absolute;
+            top: 2rem;
+            right: 5rem;
+        }
+
+        .order .order_now {
+            color: white;
+            background-color: red;
+            padding: 1rem;
+            text-align: center;
+            line-height: .2rem;
+            border-radius: 2rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .order .order_now:hover {
+            color: black;
+            background-color: white;
+            -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+
+        .search {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            position: absolute;
+            top: 31rem;
+        }
+
+        .search input {
+            width: 38rem;
+            height: 5rem;
+            color: white;
+            text-align: center;
+            background: none;
+            outline: none;
+            border: .1rem solid yellow;
+            -webkit-box-shadow: 0.5rem 0.5rem 26.5rem 0.5rem yellow;
+            box-shadow: 0.5rem 0.5rem 26.5rem 0.5rem yellow;
+        }
+
+        .search .btn {
+            background-color: red;
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: 5rem;
+            width: 12rem;
+            outline: none;
+            border: none;
+            color: white;
+            font-weight: bolder;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .search .btn:hover {
+            color: white;
+            background-color: #eb3b5a;
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+
+        ::-webkit-input-placeholder {
+            color: white;
+        }
+
+        :-ms-input-placeholder {
+            color: white;
+        }
+
+        ::-ms-input-placeholder {
+            color: white;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        .videos {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .video1 {
+            margin: 2rem;
+            float: left;
+        }
+
+        .video1 img {
+            width: 15rem;
+            height: 10rem;
+            position: relative;
+            left: 10rem;
+            top: 23rem;
+            border-radius: 1rem;
+        }
+
+        .pause {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .pause img {
+            width: 5rem;
+            height: 4rem;
+            position: relative;
+            top: 28rem;
+            left: -39rem;
+            border-radius: 4rem;
+            cursor: pointer;
+        }
+
+        .pause2 {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .pause2 img {
+            width: 5rem;
+            height: 4rem;
+            position: relative;
+            top: 28rem;
+            left: -26rem;
+            border-radius: 4rem;
+            cursor: pointer;
+        }
+
+        .pause3 {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .pause3 img {
+            width: 5rem;
+            height: 4rem;
+            position: relative;
+            top: 28rem;
+            left: -12rem;
+            border-radius: 4rem;
+            cursor: pointer;
+        }
+
+        footer {
+            width: 100vw;
+            height: 5%;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            opacity: 0.5;
+        }
+
+        footer .footer1 {
+            color: blue;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 2rem;
+            line-height: -1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Special Dish</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="logo7.png" alt="">
+        </div>
+        <div class="order">
+            <button class="order_now">order now</button>
+
+        </div>
+        <div class="rating">
+            <img src="rating.jpg" alt="rating">
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="writer">
+            <hl class="welcome"> welcome to our Restaurant</hl>
+
+        </div>
+        <div class="search">
+            <input type="text " name="meals" placeholder="Search your meals now">
+            <button class="btn"> Search</button>
+        </div>
+
+    </div>
+    <div class="videos">
+        <div class="video1">
+            <img src="noddle.jpeg" alt="noddle image">
+
+        </div>
+        <div class="video1">
+            <img src="paneer tikka.jpg" alt="paneer tikka image">
+        </div>
+        <div class="video1">
+            <img src="burger.jpg" alt="burger image">
+        </div>
+        <div class="pause">
+            <img src="pause.png" alt="video is pause">
+        </div>
+        <div class="pause2">
+            <img src="pause.png" alt="video is pause">
+        </div>
+        <div class="pause3">
+            <img src="pause.png" alt="video is pause">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer1">
+            2020 | Designed by Suresh jangid
+        </div>
+    </footer>
+</body>
+
+</html>
